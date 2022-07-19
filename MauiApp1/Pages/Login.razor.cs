@@ -7,12 +7,13 @@ namespace MauiApp1.Pages;
 
 public partial class Login : ComponentBase
 {
-    [Inject]
-    private NavigationManager navigationManager { get; set; } = default!;
+    //[Inject]
+    //private NavigationManager navigationManager { get; set; } = default!;
 
-    private void OnLogin(MouseEventArgs e)
+    private async void OnLogin(MouseEventArgs e)
     {
-        navigationManager.NavigateTo("/about");
-        Debug.WriteLine($"Login clicked");
+        //navigationManager.NavigateTo("/about");
+        await Shell.Current.GoToAsync($"//MainPage");
+        Debug.WriteLine($"Login clicked and invoke GoToAsync");
     }
 }
