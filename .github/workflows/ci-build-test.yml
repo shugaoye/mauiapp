@@ -1,0 +1,19 @@
+name: .NET
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  PROJECT_NAME: mauiapp
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check environment
+      run: echo dotnet restore ${{env.PROJECT_NAME}}/${{env.PROJECT_NAME}}.csproj
+
